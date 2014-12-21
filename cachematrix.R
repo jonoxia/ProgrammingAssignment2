@@ -1,9 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Functions for creating a cache-enabled matrix, calculating the inverse, and storing 
+## the matrix inverse in the cache.
+## I simply followed the pattern of the cacheMean example given in the assignment.
+## Jonathan Xia, December 21, 2014
 
 ## Takes a matrix of initial values. If not provided, defaults to an empty matrix.
 ## Returns a cache-enabled matrix "object" which is just a list of getter/setter methods.
-
 makeCacheMatrix <- function(values = matrix()) {
     # Private data:
     inverse <- NULL
@@ -41,7 +42,3 @@ cacheSolve <- function(matrix, ...) {
     matrix$setInverse(inverse)
     inverse
 }
-
-
-## This is not how i'd personally design the class -- I'd rather just do the solving inside getInverse
-## -- but I followed the pattern of the example.
